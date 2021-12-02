@@ -6,7 +6,7 @@ namespace ConsoleClassWork_01
     {
         static void Main(string[] args)
         {
-            Task3();
+            Task5();
         }
 
         static void Task1() 
@@ -66,12 +66,31 @@ namespace ConsoleClassWork_01
 
         static void Task5()
         {
+            //    Y = AX + B
+
             float x1 = float.Parse(Console.ReadLine());
             float y1 = float.Parse(Console.ReadLine());
             float x2 = float.Parse(Console.ReadLine());
             float y2 = float.Parse(Console.ReadLine());
             
+            float k;
+            float b;
+            string Y = "Y";
+            string X = "X";
 
+            // pA(x1, y1);              pB(x2, y2);           y = kx + b 
+
+            //     y1 = x1*k + b  |  b = y1 - x1 * k  
+            //     y2 = x2*k + b
+            //                       y2 = x2 * k + y1 - x1 * k
+            //                       y2 - y1 = x2 * k - x1 * k
+            //                       y2 - y1 = k * (x2 - x1)
+            //                       k = (y2 - y1) / (x2 - x1);
+
+            k = (y2 - y1) / (x2 - x1);
+            b = y1 - x1 * k;
+            
+            Console.WriteLine(Y + "=" + k + X  + "+" + b);
         }
     }
 
